@@ -1,0 +1,10 @@
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\bin\Debug\AlgorithmHW4.exe.config
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\bin\Debug\AlgorithmHW4.exe
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\bin\Debug\AlgorithmHW4.pdb
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\obj\Debug\AlgorithmHW4.csprojAssemblyReference.cache
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\obj\Debug\AlgorithmHW4.csproj.CoreCompileInputs.cache
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\obj\Debug\AlgorithmHW4.exe
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\obj\Debug\AlgorithmHW4.pdb
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\bin\Debug\System.ValueTuple.dll
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\bin\Debug\System.ValueTuple.xml
+F:\Проекты VS\AlgorithmHW4\AlgorithmHW4\obj\Debug\AlgorithmHW4.csproj.CopyComplete
