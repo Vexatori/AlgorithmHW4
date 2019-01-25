@@ -56,7 +56,7 @@ namespace AlgorithmHW4
             arr[ posI * n + posJ ] = step;
             if(!IsNotZero(arr))
             {
-                if(IsEmptyAround(posI, posJ, arr))
+                if(EmptyPoints(posI, posJ, arr).Count > 0)
                 {
                     int i = NextPoint(EmptyPoints(posI, posJ, arr), arr).i;
                     int j = NextPoint(EmptyPoints(posI, posJ, arr), arr).j;
@@ -79,82 +79,13 @@ namespace AlgorithmHW4
             int min = arr.Length;
             foreach(var point in points)
             {
-                if(ValueOfEmptyPoints(point.Item1, point.Item2, arr) > 0 & ValueOfEmptyPoints(point.Item1, point.Item2, arr) < min)
+                if(EmptyPoints(point.Item1, point.Item2, arr).Count > 0 & EmptyPoints(point.Item1, point.Item2, arr).Count < min)
                 {
-                    min = ValueOfEmptyPoints(point.Item1, point.Item2, arr);
+                    min = EmptyPoints(point.Item1, point.Item2, arr).Count;
                     tpl = (point.Item1, point.Item2);
                 }
             }
             return tpl;
-        }
-
-        /// <summary>
-        /// Метод возвращает количество пустых ходов для заданной точки
-        /// </summary>
-        /// <param name="i">Координата заданной точки по строке</param>
-        /// <param name="j">Координата заданной точки по столбцу</param>
-        /// <param name="arr">Заданный массив точек</param>
-        /// <returns></returns>
-        static int ValueOfEmptyPoints(int i, int j, int[] arr)
-        {
-            int value = 0;
-            if(( i + 2 < n ) & ( j + 1 < n ))
-            {
-                if(arr[ ( i + 2 ) * n + j + 1 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i + 1 < n ) & ( j + 2 < n ))
-            {
-                if(arr[ ( i + 1 ) * n + j + 2 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i - 2 >= 0 ) & ( j + 1 < n ))
-            {
-                if(arr[ ( i - 2 ) * n + j + 1 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i - 1 >= 0 ) & ( j + 2 < n ))
-            {
-                if(arr[ ( i - 1 ) * n + j + 2 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i + 1 < n ) & ( j - 2 >= 0 ))
-            {
-                if(arr[ ( i + 1 ) * n + j - 2 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i + 2 < n ) & ( j - 1 >= 0 ))
-            {
-                if(arr[ ( i + 2 ) * n + j - 1 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i - 1 >= 0 ) & ( j - 2 >= 0 ))
-            {
-                if(arr[ ( i - 1 ) * n + j - 2 ] == 0)
-                {
-                    value++;
-                }
-            }
-            if(( i - 2 >= 0 ) & ( j - 1 >= 0 ))
-            {
-                if(arr[ ( i - 2 ) * n + j - 1 ] == 0)
-                {
-                    value++;
-                }
-            }
-            return value;
         }
 
         /// <summary>
@@ -241,53 +172,6 @@ namespace AlgorithmHW4
                 return true;
             }
             else return false;
-        }
-
-        /// <summary>
-        /// Метод проверяет, есть ли вокруг заданной точки пустые места
-        /// </summary>
-        /// <param name="i">Координата по строке</param>
-        /// <param name="j">Координата по столбцу</param>
-        /// <param name="arr">Заданный массив точек</param>
-        /// <returns></returns>
-        static bool IsEmptyAround(int i, int j, int[] arr)
-        {
-            if(( i + 2 < n ) & ( j + 1 < n ) && arr[ ( i + 2 ) * n + j + 1 ] == 0)
-            {
-                return true;
-            }
-            else if(( i + 1 < n ) & ( j + 2 < n ) && arr[ ( i + 1 ) * n + j + 2 ] == 0)
-            {
-                return true;
-            }
-            else if(( i - 2 >= 0 ) & ( j + 1 < n ) && arr[ ( i - 2 ) * n + j + 1 ] == 0)
-            {
-                return true;
-            }
-            else if(( i - 1 >= 0 ) & ( j + 2 < n ) && arr[ ( i - 1 ) * n + j + 2 ] == 0)
-            {
-                return true;
-            }
-            else if(( i + 1 < n ) & ( j - 2 >= 0 ) && arr[ ( i + 1 ) * n + j - 2 ] == 0)
-            {
-                return true;
-            }
-            else if(( i + 2 < n ) & ( j - 1 >= 0 ) && arr[ ( i + 2 ) * n + j - 1 ] == 0)
-            {
-                return true;
-            }
-            else if(( i - 1 >= 0 ) & ( j - 2 >= 0 ) && arr[ ( i - 1 ) * n + j - 2 ] == 0)
-            {
-                return true;
-            }
-            else if(( i - 2 >= 0 ) & ( j - 1 >= 0 ) && arr[ ( i - 2 ) * n + j - 1 ] == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         static void Main( string[] args )
